@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Lista">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListaResult" type="tns:ArrayOfPonto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPonto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Ponto" nillable="true" type="tns:Ponto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Ponto">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PontoId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Valor" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Cadastra">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="produto" type="tns:Produto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Produto">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ProdutoId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nota" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cnpj" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CadastraResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CadastraResult" type="tns:ArrayOfMensagem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfMensagem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Mensagem" nillable="true" type="tns:Mensagem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Mensagem">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="MensangemId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descricao" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Codigo" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ListaSoapIn">
+    <wsdl:part name="parameters" element="tns:Lista" />
+  </wsdl:message>
+  <wsdl:message name="ListaSoapOut">
+    <wsdl:part name="parameters" element="tns:ListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CadastraSoapIn">
+    <wsdl:part name="parameters" element="tns:Cadastra" />
+  </wsdl:message>
+  <wsdl:message name="CadastraSoapOut">
+    <wsdl:part name="parameters" element="tns:CadastraResponse" />
+  </wsdl:message>
+  <wsdl:portType name="validapontosSoap">
+    <wsdl:operation name="Lista">
+      <wsdl:input message="tns:ListaSoapIn" />
+      <wsdl:output message="tns:ListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Cadastra">
+      <wsdl:input message="tns:CadastraSoapIn" />
+      <wsdl:output message="tns:CadastraSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="validapontosSoap" type="tns:validapontosSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Lista">
+      <soap:operation soapAction="http://tempuri.org/Lista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Cadastra">
+      <soap:operation soapAction="http://tempuri.org/Cadastra" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="validapontosSoap12" type="tns:validapontosSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Lista">
+      <soap12:operation soapAction="http://tempuri.org/Lista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Cadastra">
+      <soap12:operation soapAction="http://tempuri.org/Cadastra" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="validapontos">
+    <wsdl:port name="validapontosSoap" binding="tns:validapontosSoap">
+      <soap:address location="http://localhost:49711/WebService/validapontos.asmx" />
+    </wsdl:port>
+    <wsdl:port name="validapontosSoap12" binding="tns:validapontosSoap12">
+      <soap12:address location="http://localhost:49711/WebService/validapontos.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

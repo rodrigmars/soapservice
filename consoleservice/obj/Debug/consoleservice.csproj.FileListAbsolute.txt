@@ -1,0 +1,6 @@
+C:\Users\rodrigo\source\repos\WebApplication1\consoleservice\bin\Debug\consoleservice.exe.config
+C:\Users\rodrigo\source\repos\WebApplication1\consoleservice\bin\Debug\consoleservice.exe
+C:\Users\rodrigo\source\repos\WebApplication1\consoleservice\bin\Debug\consoleservice.pdb
+C:\Users\rodrigo\source\repos\WebApplication1\consoleservice\obj\Debug\consoleservice.csproj.CoreCompileInputs.cache
+C:\Users\rodrigo\source\repos\WebApplication1\consoleservice\obj\Debug\consoleservice.exe
+C:\Users\rodrigo\source\repos\WebApplication1\consoleservice\obj\Debug\consoleservice.pdb

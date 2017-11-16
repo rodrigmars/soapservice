@@ -1,0 +1,6 @@
+C:\Users\rodrigo\source\repos\WebApplication1\servicovalidapontos\bin\Debug\servicovalidapontos.dll
+C:\Users\rodrigo\source\repos\WebApplication1\servicovalidapontos\bin\Debug\servicovalidapontos.pdb
+C:\Users\rodrigo\source\repos\WebApplication1\servicovalidapontos\obj\Debug\servicovalidapontos.csprojResolveAssemblyReference.cache
+C:\Users\rodrigo\source\repos\WebApplication1\servicovalidapontos\obj\Debug\servicovalidapontos.csproj.CoreCompileInputs.cache
+C:\Users\rodrigo\source\repos\WebApplication1\servicovalidapontos\obj\Debug\servicovalidapontos.dll
+C:\Users\rodrigo\source\repos\WebApplication1\servicovalidapontos\obj\Debug\servicovalidapontos.pdb
